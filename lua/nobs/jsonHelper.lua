@@ -1,16 +1,3 @@
-M = {}
-M.buildSystems = {
-  ["C:/Users/KLM94141"] = "echo hello!",
-  ["C:/Users/KLM94141/AppData/Local/nvim-data/site/pack/core/opt/nobs.nvim"] = "echo hello!!",
-  ["abcdefg"] = {
-    ["1"] = "nested value 1",
-    ["2"] = "nested value 2",
-    ["Nested table"] = {
-      ["Nested Nested"] = "Nested Nested value"
-    }
-  }
-}
-
 function tableToJsonString(table, recursion)
   local content = ""
   local rbracket = ""
@@ -62,3 +49,4 @@ file:close()
 content = readJsonFile("test.Json")
 print("Lines file:")
 print(content)
+
