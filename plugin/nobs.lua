@@ -10,7 +10,7 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
-  "RBS", function(opts)
+  "RBS", function()
     local cwd = vim.fn.expand("%:p:h")
     require("nobs").removeBuildSystem(cwd)
   end,
@@ -18,7 +18,7 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
-  "GBS", function(opts)
+  "GBS", function()
     local cwd = vim.fn.expand("%:p:h")
     require("nobs").getBuildSystem(cwd, true)
   end,
@@ -26,9 +26,17 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
-  "EBS", function(opts)
+  "EBS", function()
     local cwd = vim.fn.expand("%:p:h")
     require("nobs").executeBuildSystem(cwd)
+  end,
+  { nargs = 0 }
+)
+
+vim.api.nvim_create_user_command(
+  "BS", function()
+    local cwd = vim.fn.expand("%:p:h")
+    require("nobs").toggleBuildSystem(cwd)
   end,
   { nargs = 0 }
 )
