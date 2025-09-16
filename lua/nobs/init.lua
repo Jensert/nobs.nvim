@@ -96,6 +96,22 @@ function M.executeBuildSystem(cwd)
   vim.cmd("rightbelow vsplit | term " .. command)
 end
 
+function M.toggleBuildSystem(cwd)
+  local command = M.getBuildSystem(cwd, false)
+  if command == nil then
+    vim.ui.input({ prompt = "No command found for \'"..cwd.. "\'\nPlease enter command: " },
+      function(input)
+        if input ~= nil then
+          vim.notify("\n")
+          M.createBuildSystem(cwd, input)
+        end
+      end
+    )
+  else
+    M.executeBuildSystem(cwd)
+  end
+end
+
 M.pluginDataDirectory = vim.fn.stdpath("data") .. "\\nobs.nvim\\"
 M.pluginData = M.pluginDataDirectory .. "data.json"
 
