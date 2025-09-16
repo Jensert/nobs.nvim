@@ -78,8 +78,6 @@ Delete the saved command:
 ```
 
 ## Todo
-- Persistent storage in neovim data folder
-Coming in v1.0 this or next week when i get the time
 - A 'toggle' function.
 Which checks if there is a build system, if not executes :CBS. If there is one, it executes :EBS
 Can be used to easily map the full functionality to a single keystroke like <F5> or <C+b> 
