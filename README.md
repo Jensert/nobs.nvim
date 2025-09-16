@@ -42,8 +42,8 @@ vim.pack({ 'https://github.com/Jensert/nobs.nvim' })
 
 lazy.nvim
 ```
-use {
-  "https://github.com/Jensert/nobs.nvim",
+return {
+  "Jensert/nobs.nvim",
   config = function()
     require("nobs")
   end
